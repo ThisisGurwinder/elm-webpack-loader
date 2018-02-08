@@ -1,9 +1,31 @@
 module Main exposing (..)
 
-import Html exposing (text)
-import Hello.World exposing (hello)
+import Html exposing (..)
+import Bootstrap.CDN as CDN
+import Bootstrap.Grid as Grid
+import Bootstrap.Form as Form
+import Bootstrap.Form.Checkbox as Checkbox
+import Bootstrap.Form.Input as Input
+import Bootstrap.Button as Button
+import Bootstrap.CDN as CDN
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
 
-
-main : Html.Html a
+main : Html Msg
 main =
-    text hello
+    view "" ""
+
+type Msg
+    = EmailUpdated String
+    | PasswordUpdated String
+    | RememberMeToggled Bool
+    | SigninPressed
+
+view : String -> String -> Html Msg
+view username password =
+    Grid.container []
+        [ CDN.stylesheet
+        , node "link" [ rel "stylesheet", href "http://v4-alpha.getbootstrap.com/examples/signin/signin.css" ] []
+        , Form.form [ class "form-signin" ]
+            [ h2 [ class "form-signin-heading" ] [ text "Please sign in " ]
+            , label [ class "sr-only"] ]]
