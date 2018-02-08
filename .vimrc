@@ -88,6 +88,7 @@ Plug 'carlosgaldino/elixir-snippets'
 
 " elm
 "" Elm Bundle
+Plug 'sheerun/vim-polyglot'
 Plug 'elmcast/elm-vim'
 
 
